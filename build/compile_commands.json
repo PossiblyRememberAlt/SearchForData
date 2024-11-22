@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/workspaces/SearchForData/build",
+  "command": "/usr/bin/g++    -g   -std=c++2a -o CMakeFiles/SearchForData.dir/main.cpp.o -c /workspaces/SearchForData/main.cpp",
+  "file": "/workspaces/SearchForData/main.cpp"
+}
+]

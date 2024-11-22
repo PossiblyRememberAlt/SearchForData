@@ -9,7 +9,7 @@
 namespace PRUtils::Search
 { 
 	void SearchForWAV(const char* apath) { // Search for WAV(s) in file
-		std::filesystem::path path = apath;
+		#define path apath
 
 #pragma region Begin Search
 		bool found = false;
@@ -46,6 +46,7 @@ namespace PRUtils::Search
 		}
 		if (!found) { // Make sure we have something
 			std::printf("\nNothing found.\n");
+			return;
 		}
 		headerPosition = static_cast<long long>(filestream.tellg()) - 5;
 
@@ -54,14 +55,18 @@ namespace PRUtils::Search
 		#endif // DEBUG
 		#pragma endregion
 
-		long totalSize; // Initialize total size (total size of WAV, header included!)
+		// long totalSize; // Initialize total size (total size of WAV, header included!)
 
-		std::printf("%c", filestream.peek());
+		// std::printf("%c", filestream.peek());
 
-		filestream.read((char*)&totalSize, 4);
-		#ifdef DEBUG
-		std::printf("%ld",totalSize);
-		#endif
+		// filestream.read((char*)&totalSize, 4);
+		// #ifdef DEBUG
+		// std::printf("%ld",totalSize);
+		// #endif
+
+		for(unsigned char i = 0; i < 4; ++i){
+			printf("%i\n",(int)filestream.get());
+		}
 
 		//filestream.seekg(headerPosition+44 /* header is always 44 bytes, so skip ahead to data */, std::ios::cur); // Skip ahead in the file until next important value. WIP, might parse more later
 		filestream.seekg(headerPosition, std::ios::beg);

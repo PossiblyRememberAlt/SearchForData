@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/SearchForData/SFD.hpp
+iostream
+-
+fstream
+-
+filesystem
+-
+
+/workspaces/SearchForData/main.cpp
+SFD.hpp
+/workspaces/SearchForData/SFD.hpp
+fstream
+-
+

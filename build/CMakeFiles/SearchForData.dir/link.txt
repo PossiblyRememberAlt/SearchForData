@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/SearchForData.dir/main.cpp.o  -o SearchForData 

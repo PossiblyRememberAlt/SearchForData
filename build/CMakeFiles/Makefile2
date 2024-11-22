@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /workspaces/SearchForData/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all:
+all: CMakeFiles/SearchForData.dir/all
 
 .PHONY : all
 
@@ -63,9 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean:
+clean: CMakeFiles/SearchForData.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/SearchForData.dir
+
+# All Build rule for target.
+CMakeFiles/SearchForData.dir/all:
+	$(MAKE) -f CMakeFiles/SearchForData.dir/build.make CMakeFiles/SearchForData.dir/depend
+	$(MAKE) -f CMakeFiles/SearchForData.dir/build.make CMakeFiles/SearchForData.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/SearchForData/build/CMakeFiles --progress-num=1,2 "Built target SearchForData"
+.PHONY : CMakeFiles/SearchForData.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/SearchForData.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/SearchForData/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SearchForData.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/SearchForData/build/CMakeFiles 0
+.PHONY : CMakeFiles/SearchForData.dir/rule
+
+# Convenience name for target.
+SearchForData: CMakeFiles/SearchForData.dir/rule
+
+.PHONY : SearchForData
+
+# clean rule for target.
+CMakeFiles/SearchForData.dir/clean:
+	$(MAKE) -f CMakeFiles/SearchForData.dir/build.make CMakeFiles/SearchForData.dir/clean
+.PHONY : CMakeFiles/SearchForData.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

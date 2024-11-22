@@ -839,7 +839,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Project"
+			"value" : "SearchForData"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1122,6 +1122,30 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "MyProject_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/workspaces/SearchForData/build"
+		},
+		{
+			"name" : "MyProject_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/workspaces/SearchForData"
+		},
+		{
 			"name" : "Project_BINARY_DIR",
 			"properties" : 
 			[
@@ -1135,6 +1159,30 @@
 		},
 		{
 			"name" : "Project_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/workspaces/SearchForData"
+		},
+		{
+			"name" : "SearchForData_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/workspaces/SearchForData/build"
+		},
+		{
+			"name" : "SearchForData_SOURCE_DIR",
 			"properties" : 
 			[
 				{

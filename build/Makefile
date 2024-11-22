@@ -110,6 +110,46 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named SearchForData
+
+# Build rule for target.
+SearchForData: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 SearchForData
+.PHONY : SearchForData
+
+# fast build rule for target.
+SearchForData/fast:
+	$(MAKE) -f CMakeFiles/SearchForData.dir/build.make CMakeFiles/SearchForData.dir/build
+.PHONY : SearchForData/fast
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/SearchForData.dir/build.make CMakeFiles/SearchForData.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/SearchForData.dir/build.make CMakeFiles/SearchForData.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/SearchForData.dir/build.make CMakeFiles/SearchForData.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -118,6 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... SearchForData"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
