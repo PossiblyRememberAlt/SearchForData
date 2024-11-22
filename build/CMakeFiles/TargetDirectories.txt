@@ -1,0 +1,2 @@
+/workspaces/SearchForData/build/CMakeFiles/rebuild_cache.dir
+/workspaces/SearchForData/build/CMakeFiles/edit_cache.dir

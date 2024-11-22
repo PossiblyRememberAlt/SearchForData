@@ -6,17 +6,11 @@
 #define CHARDEBUG
 // https://docs.fileformat.com/audio/wav/
 
-// Create WAV Template
-//struct WAV{
-//	const char[4] FileType = "RIFF";
-//
-//};
-
-
 namespace PRUtils::Search
 { 
 	void SearchForWAV(const char* apath) { // Search for WAV(s) in file
 		std::filesystem::path path = apath;
+
 #pragma region Begin Search
 		bool found = false;
 
