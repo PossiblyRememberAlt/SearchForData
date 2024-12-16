@@ -19,7 +19,7 @@ namespace PRUtils::Search
 		if (!filestream) {
 			throw("Invalid file.");
 		}
-
+		
 		const char header[4] = { 'R', 'I', 'F', 'F' }; // Header to look for
 		unsigned char iterator = 0; // Iterator for header char offset
 
@@ -55,26 +55,32 @@ namespace PRUtils::Search
 		#endif // DEBUG
 		#pragma endregion
 
-		// long totalSize; // Initialize total size (total size of WAV, header included!)
+		char importedHeader[44];
 
-		// std::printf("%c", filestream.peek());
+		filestream.seekg(headerPosition,std::ios::beg);
 
-		// filestream.read((char*)&totalSize, 4);
-		// #ifdef DEBUG
-		// std::printf("%ld",totalSize);
-		// #endif
+		filestream.read(importedHeader,44);
 
-		for(unsigned char i = 0; i < 4; ++i){
-			printf("%i\n",(int)filestream.get());
-		}
+		printf("%i\n",*(int*)&importedHeader[4]);
+
+		long long dataSize = *(int*)&importedHeader[40];
+
+		char* data = new char[dataSize];
+
+		// for(unsigned char i = 0; i < 4; ++i){
+		// 	printf("%i\n",(int)filestream.get());
+		// }
 
 		//filestream.seekg(headerPosition+44 /* header is always 44 bytes, so skip ahead to data */, std::ios::cur); // Skip ahead in the file until next important value. WIP, might parse more later
+		
 		filestream.seekg(headerPosition, std::ios::beg);
 
-		/*std::ofstream WAV (std::filesystem::current_path().append("out.wav").c_str(),std::ios::binary);
+		std::ofstream WAV ("./test.wav",std::ios::binary);
 
-		for (unsigned long long i = 0; i < totalSize; ++i) {
-			WAV.put((char)filestream.get());
-		}*/
+		WAV.write(importedHeader,44);
+		WAV.write(data,dataSize);
+
+
+		delete[] data;
 	}
 }
