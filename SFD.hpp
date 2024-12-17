@@ -66,6 +66,7 @@ namespace PRUtils::Search
 		long long dataSize = *(int*)&importedHeader[40];
 
 		char* data = new char[dataSize];
+		filestream.read(data,dataSize);
 
 		// for(unsigned char i = 0; i < 4; ++i){
 		// 	printf("%i\n",(int)filestream.get());
